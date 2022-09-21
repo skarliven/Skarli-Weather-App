@@ -24,12 +24,6 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-// display icon
-function displayIcon() {
-  
-  
-}
-
 
 
 // temperature,humidity, wind
@@ -87,7 +81,7 @@ function convertToFahrenheit(event) {
   // remove the active class
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let  fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32; 
+  let  fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32; 
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
