@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Weather App project at shecodes">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Weather App</title>
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="src/style.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Weather <i class="bi bi-cloud-fill"></i></h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link active" aria-current="page" href="https://www.shecodes.io/graduates/52825-skarli-pena-larsen" target="_blank">Skarli Pena <i class="bi bi-balloon-heart-fill"></i></a>
+        <a class="nav-link" href="https://codepen.io/skarliniloiv/live/oNqdmZe" target="_blank">Resume</a>
+        <a class="nav-link" href="mailto:skarlicodemusic@gmail.com" >Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="px-3">
+    <!-- Form -->
+    <form class="search-form" id="search-form">
+      <div class="row">
+        <div class="col-6">
+          <input type="search" placeholder="Enter a city.." class="form-control search-input" autofocus="on" autocomplete="off" id="city-input">
+        </div>
+        <!-- button -->
+        <div class="col-3">
+          <input type="submit" class="btn btn-primary w-100" value="Search">
+        </div>
+        <!-- button2 -->
+        <div class="col-3">
+          <button class="btn btn-primary btn-block w-100" id="current-location-button"><i class="bi bi-geo-alt-fill"></i>
+            Current
+          </button>
+          <!-- aria-label="..." on the control -->
+          
+        </div>
+      </div>
+    </form>
+    <!-- /Form -->
+    <!-- WeatherInfo -->
+    <div class="WeatherInfo">
+      <div class="row">
+        <div class="col-6">
+          <h1 class="display-1" id="city"></h1>
+          <ul>
+            <li id="date"></li>
+            <li id="description"></li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <div class="temperature-container d-flex justify-content-end weather">
+            <img src="" alt="Clear" id="icon">
+            <div>
+              <span class="temperature" id="temperature">26</span>
+              <span class="unit" id="unit"><a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
+              <ul>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+     </div>
+   </div>
+    <!-- /weatherinfo -->
+    <!-- WeatherForecastNow -->
+    <div class="WeatherForecast row">
+      <div class="col">
+        <div class="WeatherForecastPreview">
+          <div class="forecast-time">Sun</div>
+          <canvas width="38" height="38"></canvas>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">26°</span>
+            <span class="forecast-temperature-min">19°</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="WeatherForecastPreview">
+          <div class="forecast-time">Mon</div>
+          <canvas width="38" height="38"></canvas>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">27°</span>
+            <span class="forecast-temperature-min">19°</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="WeatherForecastPreview">
+          <div class="forecast-time">Tue</div>
+          <canvas width="38" height="38"></canvas>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">28°</span>
+            <span class="forecast-temperature-min">19°</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="WeatherForecastPreview">
+          <div class="forecast-time">Wed</div>
+          <canvas width="38" height="38"></canvas>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">26°</span>
+            <span class="forecast-temperature-min">19°</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="WeatherForecastPreview">
+          <div class="forecast-time">Thu</div>
+          <canvas width="38" height="38"></canvas>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">27°</span>
+            <span class="forecast-temperature-min">18°</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-auto text-white">
+    <p class="lead"><a href="https://github.com/skarliven/weathe-app" target="_blank">Open-source code</a>, with <i class="bi bi-suit-heart-fill"></i> by Skarli 👩🏻‍💻🇻🇪, 2022.</p>
+  </footer>
+</div>
+
+<!-- optional JavaScript -->
+<script src="src/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
