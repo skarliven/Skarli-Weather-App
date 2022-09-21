@@ -209,3 +209,13 @@ footer {
     margin-top: 40px;
     text-align: center;
 }
+
+footer a {
+    color: white;
+}
+a.footer{
+    text-decoration: underline;
+}
+a.footer:hover {
+    color: #eebbc3;
+}
