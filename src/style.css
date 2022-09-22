@@ -166,11 +166,13 @@ li {
     padding-bottom: 50px;
     text-align: center;
 }
-.WeatherForecast .forecast-time {
+.WeatherForecast .forecast-date {
     color: white;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
+    opacity: 0.6;
+
 }
 .Weather .WeatherForecast canvas {
     display: block;
@@ -178,13 +180,15 @@ li {
 }
 .WeatherForecast .forecast-temperature {
     color: #fffffe;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 1.5;
 }
 
-
+.forecast-temperature-min {
+    opacity: 0.5;
+}
  .weather .active {
  
   cursor: default;
